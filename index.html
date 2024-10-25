@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Curriculum Setup</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <header class="top-bar">
+      <a href="/" class="logo">Curriculum Maker VHX</a>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-button active" data-tab="define">Define</button>
+      <button class="tab-button" data-tab="combine">Combine</button>
+      <button class="tab-button" data-tab="align">Align</button>
+    </div>
+
+    <div class="content-wrapper">
+      <aside class="sidebar">
+        <nav>
+          <ul class="sidebar-nav">
+            <li><a href="#curriculum-setup">1. Curriculum Setup</a></li>
+            <li><a href="#school-structure">2. School Structure</a></li>
+            <li><a href="#team-management">3. Team Management</a></li>
+            <li><a href="#educational-frameworks">4. Educational Frameworks</a></li>
+            <li><a href="#profiles-qualifications">5. Profiles & Qualifications</a></li>
+            <li><a href="#domains-competencies">6. Domains & Competencies</a></li>
+            <li><a href="#learning-outcomes">7. Learning Outcomes & Methods</a></li>
+            <li><a href="#performance-management">8. Performance Management</a></li>
+            <li><a href="#progress-achievement">9. Progress & Achievement</a></li>
+            <li><a href="#taxonomies">10. Taxonomies</a></li>
+            <li><a href="#course-planning">11. Course Planning</a></li>
+            <li><a href="#module-management">12. Module Management</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <div id="define" class="tab-content active">
+          <form action="/submit-curriculum" method="post">
+            <h2 id="curriculum-setup">1. Curriculum Setup</h2>
+            
+            <fieldset>
+              <legend>Curriculum</legend>
+              <label for="curriculum-name">Name:</label>
+              <input type="text" id="curriculum-name" name="curriculum-name" required>
+              
+              <label for="curriculum-description">Description:</label>
+              <textarea id="curriculum-description" name="curriculum-description"></textarea>
+              
+              <label for="curriculum-code">Reference Code:</label>
+              <input type="text" id="curriculum-code" name="curriculum-code">
+              
+              <label for="curriculum-image">Image:</label>
+              <input type="file" id="curriculum-image" name="curriculum-image" accept="image/*">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Study Program</legend>
+              <label for="program-name">Name:</label>
+              <input type="text" id="program-name" name="program-name" required>
+              
+              <label for="program-description">Description:</label>
+              <textarea id="program-description" name="program-description"></textarea>
+              
+              <label for="program-curriculum">Associated Curriculum:</label>
+              <input type="text" id="program-curriculum" name="program-curriculum">
+              
+              <label for="program-image">Image:</label>
+              <input type="file" id="program-image" name="program-image" accept="image/*">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Cohort</legend>
+              <label for="cohort-year">Year:</label>
+              <select id="cohort-year" name="cohort-year">
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+              </select>
+              
+              <label for="cohort-name">Name:</label>
+              <input type="text" id="cohort-name" name="cohort-name">
+              
+              <label for="cohort-start">Start Date:</label>
+              <input type="date" id="cohort-start" name="cohort-start">
+              
+              <label for="cohort-end">End Date:</label>
+              <input type="date" id="cohort-end" name="cohort-end">
+            </fieldset>
+          
+            <fieldset>
+              <legend>EQF/NQF Frameworks</legend>
+              <label for="framework">Select Framework:</label>
+              <select id="framework" name="framework">
+                <option value="eqf">EQF</option>
+                <option value="nqf">NQF</option>
+              </select>
+              
+              <label for="framework-description">Description:</label>
+              <textarea id="framework-description" name="framework-description"></textarea>
+              
+              <label for="framework-level">Level:</label>
+              <input type="number" id="framework-level" name="framework-level" min="1" max="8">
+            </fieldset>
+          
+            <fieldset>
+              <legend>ECTS Credits</legend>
+              <label for="ects-value">Credit Value:</label>
+              <input type="number" id="ects-value" name="ects-value" min="0">
+              
+              <label for="ects-description">Description:</label>
+              <textarea id="ects-description" name="ects-description"></textarea>
+            </fieldset>
+          
+            <h2 id="school-structure">2. School Structure</h2>
+            
+            <fieldset>
+              <legend>Institute</legend>
+              <label for="institute-name">Name:</label>
+              <input type="text" id="institute-name" name="institute-name" required>
+              
+              <label for="institute-description">Description:</label>
+              <textarea id="institute-description" name="institute-description"></textarea>
+              
+              <label for="institute-location">Location:</label>
+              <input type="text" id="institute-location" name="institute-location">
+              
+              <label for="institute-image">Image:</label>
+              <input type="file" id="institute-image" name="institute-image" accept="image/*">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Faculty</legend>
+              <label for="faculty-name">Name:</label>
+              <input type="text" id="faculty-name" name="faculty-name" required>
+              
+              <label for="faculty-institute">Associated Institute:</label>
+              <input type="text" id="faculty-institute" name="faculty-institute">
+              
+              <label for="faculty-description">Description:</label>
+              <textarea id="faculty-description" name="faculty-description"></textarea>
+            </fieldset>
+          
+            <h2 id="team-management">3. Team Management</h2>
+            
+            <fieldset>
+              <legend>Staff</legend>
+              <label for="staff-name">Name:</label>
+              <input type="text" id="staff-name" name="staff-name" required>
+              
+              <label for="staff-role">Role:</label>
+              <select id="staff-role" name="staff-role">
+                <option value="teacher">Teacher</option>
+                <option value="admin">Administrator</option>
+                <option value="support">Support Staff</option>
+              </select>
+              
+              <label for="staff-contact">Contact Info:</label>
+              <input type="text" id="staff-contact" name="staff-contact">
+              
+              <label for="staff-association">Associated Faculty/Institute:</label>
+              <select id="staff-association" name="staff-association">
+                <option value="faculty1">Faculty 1</option>
+                <option value="faculty2">Faculty 2</option>
+                <option value="institute1">Institute 1</option>
+              </select>
+            </fieldset>
+          
+            <fieldset>
+              <legend>Roles</legend>
+              <label for="role-name">Role Name:</label>
+              <input type="text" id="role-name" name="role-name" required>
+              
+              <label for="role-description">Description:</label>
+              <textarea id="role-description" name="role-description"></textarea>
+              
+              <label for="role-permissions">Permissions:</label>
+              <select id="role-permissions" name="role-permissions" multiple>
+                <option value="edit">Edit</option>
+                <option value="view">View</option>
+                <option value="delete">Delete</option>
+              </select>
+            </fieldset>
+          
+            <h2 id="educational-frameworks">4. Educational Frameworks</h2>
+  
+            <fieldset>
+              <legend>BOKs (Bodies of Knowledge)</legend>
+              <label for="bok-name">Name:</label>
+              <input type="text" id="bok-name" name="bok-name" required>
+              
+              <label for="bok-description">Description:</label>
+              <textarea id="bok-description" name="bok-description"></textarea>
+              
+              <label for="bok-competencies">Associated Competencies:</label>
+              <select id="bok-competencies" name="bok-competencies" multiple>
+                <option value="comp1">Competency 1</option>
+                <option value="comp2">Competency 2</option>
+                <option value="comp3">Competency 3</option>
+              </select>
+            </fieldset>
+          
+            <fieldset>
+              <legend>EntreComp</legend>
+              <label for="entrecomp-name">Name:</label>
+              <input type="text" id="entrecomp-name" name="entrecomp-name" required>
+              
+              <label for="entrecomp-description">Description:</label>
+              <textarea id="entrecomp-description" name="entrecomp-description"></textarea>
+              
+              <label for="entrecomp-competencies">Associated Competencies:</label>
+              <select id="entrecomp-competencies" name="entrecomp-competencies" multiple>
+                <option value="comp1">Competency 1</option>
+                <option value="comp2">Competency 2</option>
+                <option value="comp3">Competency 3</option>
+              </select>
+            </fieldset>
+          
+            <fieldset>
+              <legend>Dublin Descriptors</legend>
+              <label for="dublin-name">Name:</label>
+              <input type="text" id="dublin-name" name="dublin-name" required>
+              
+              <label for="dublin-description">Description:</label>
+              <textarea id="dublin-description" name="dublin-description"></textarea>
+              
+              <label for="dublin-level">Level:</label>
+              <input type="number" id="dublin-level" name="dublin-level" min="1" max="8">
+            </fieldset>
+          
+            <h2 id="profiles-qualifications">5. Profiles & Qualifications</h2>
+            
+            <fieldset>
+              <legend>Student Profiles</legend>
+              <label for="profile-name">Profile Name:</label>
+              <input type="text" id="profile-name" name="profile-name" required>
+              
+              <label for="profile-competencies">Associated Competencies:</label>
+              <input type="text" id="profile-competencies" name="profile-competencies">
+              
+              <label for="profile-cohorts">Linked Cohorts:</label>
+              <select id="profile-cohorts" name="profile-cohorts" multiple>
+                <option value="cohort1">Cohort 1</option>
+                <option value="cohort2">Cohort 2</option>
+                <option value="cohort3">Cohort 3</option>
+              </select>
+              
+              <label for="profile-image">Image:</label>
+              <input type="file" id="profile-image" name="profile-image" accept="image/*">
+            </fieldset>
+          
+            <fieldset>
+              <legend>End Terms</legend>
+              <label for="term-name">Term Name:</label>
+              <input type="text" id="term-name" name="term-name" required>
+              
+              <label for="term-description">Description:</label>
+              <textarea id="term-description" name="term-description"></textarea>
+              
+              <label for="term-profiles">Associated Profiles:</label>
+              <input type="text" id="term-profiles" name="term-profiles">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Qualifications</legend>
+              <label for="qualification-name">Qualification Name:</label>
+              <input type="text" id="qualification-name" name="qualification-name" required>
+              
+              <label for="qualification-level">Level:</label>
+              <input type="number" id="qualification-level" name="qualification-level" min="1" max="8">
+              
+              <label for="qualification-profiles">Associated Profiles:</label>
+              <select id="qualification-profiles" name="qualification-profiles" multiple>
+                <option value="profile1">Profile 1</option>
+                <option value="profile2">Profile 2</option>
+                <option value="profile3">Profile 3</option>
+              </select>
+              
+              <label for="qualification-document">Document Upload:</label>
+              <input type="file" id="qualification-document" name="qualification-document">
+            </fieldset>
+          
+            <h2 id="domains-competencies">6. Domains & Competencies</h2>
+            
+            <fieldset>
+              <legend>Domains</legend>
+              <label for="domain-name">Name:</label>
+              <input type="text" id="domain-name" name="domain-name" required>
+              
+              <label for="domain-description">Description:</label>
+              <textarea id="domain-description" name="domain-description"></textarea>
+              
+              <label for="domain-industry">Industry:</label>
+              <select id="domain-industry" name="domain-industry">
+                <option value="industry1">Industry 1</option>
+                <option value="industry2">Industry 2</option>
+                <option value="industry3">Industry 3</option>
+              </select>
+            </fieldset>
+          
+            <fieldset>
+              <legend>Industries</legend>
+              <label for="industry-name">Industry Name:</label>
+              <select id="industry-name" name="industry-name">
+                <option value="industry1">Industry 1</option>
+                <option value="industry2">Industry 2</option>
+                <option value="industry3">Industry 3</option>
+              </select>
+              
+              <label for="industry-description">Description:</label>
+              <textarea id="industry-description" name="industry-description"></textarea>
+              
+              <label for="industry-domains">Associated Domains:</label>
+              <input type="text" id="industry-domains" name="industry-domains">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Branches</legend>
+              <label for="branch-name">Branch Name:</label>
+              <select id="branch-name" name="branch-name">
+                <option value="branch1">Branch 1</option>
+                <option value="branch2">Branch 2</option>
+                <option value="branch3">Branch 3</option>
+              </select>
+              
+              <label for="branch-description">Description:</label>
+              <textarea id="branch-description" name="branch-description"></textarea>
+              
+              <label for="branch-industries">Associated Industries:</label>
+              <input type="text" id="branch-industries" name="branch-industries">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Competencies</legend>
+              <label for="competency-name">Competency Name:</label>
+              <input type="text" id="competency-name" name="competency-name" required>
+              
+              <label for="competency-skills">Associated Skills:</label>
+              <input type="text" id="competency-skills" name="competency-skills">
+              
+              <label for="competency-domains">Linked Domains:</label>
+              <input type="text" id="competency-domains" name="competency-domains">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Skills</legend>
+              <label for="skill-name">Skill Name:</label>
+              <input type="text" id="skill-name" name="skill-name" required>
+              
+              <label for="skill-competency">Associated Competency:</label>
+              <input type="text" id="skill-competency" name="skill-competency">
+              
+              <label for="skill-level">Level:</label>
+              <input type="number" id="skill-level" name="skill-level" min="1" max="5">
+            </fieldset>
+          
+            <h2 id="learning-outcomes">7. Learning Outcomes & Methods</h2>
+  
+            <fieldset>
+              <legend>Learning Outcomes</legend>
+              <label for="outcome-name">Outcome Name:</label>
+              <input type="text" id="outcome-name" name="outcome-name" required>
+              
+              <label for="outcome-competencies">Associated Competencies:</label>
+              <input type="text" id="outcome-competencies" name="outcome-competencies">
+              
+              <label for="outcome-level">Level:</label>
+              <input type="number" id="outcome-level" name="outcome-level" min="1" max="8">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Learning Goals</legend>
+              <label for="goal-name">Goal Name:</label>
+              <input type="text" id="goal-name" name="goal-name" required>
+              
+              <label for="goal-outcomes">Associated Learning Outcomes:</label>
+              <input type="text" id="goal-outcomes" name="goal-outcomes">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Learning Objectives</legend>
+              <label for="objective-name">Objective Name:</label>
+              <input type="text" id="objective-name" name="objective-name" required>
+              
+              <label for="objective-goals">Associated Learning Goals:</label>
+              <input type="text" id="objective-goals" name="objective-goals">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Learning Methods</legend>
+              <label for="method-type">Method Type:</label>
+              <select id="method-type" name="method-type">
+                <option value="lecture">Lecture</option>
+                <option value="workshop">Workshop</option>
+                <option value="seminar">Seminar</option>
+              </select>
+              
+              <label for="method-description">Description:</label>
+              <textarea id="method-description" name="method-description"></textarea>
+              
+              <label for="method-activities">Linked Activities:</label>
+              <input type="text" id="method-activities" name="method-activities">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Learning Activities</legend>
+              <label for="activity-name">Activity Name:</label>
+              <input type="text" id="activity-name" name="activity-name" required>
+              
+              <label for="activity-methods">Associated Methods:</label>
+              <input type="text" id="activity-methods" name="activity-methods">
+              
+              <label for="activity-duration">Duration (in minutes):</label>
+              <input type="number" id="activity-duration" name="activity-duration" min="0">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Learning Results</legend>
+              <label for="result-name">Result Name:</label>
+              <input type="text" id="result-name" name="result-name" required>
+              
+              <label for="result-outcomes">Linked Learning Outcomes:</label>
+              <input type="text" id="result-outcomes" name="result-outcomes">
+              
+              <label for="result-assessment">Assessment:</label>
+              <select id="result-assessment" name="result-assessment">
+                <option value="exam">Exam</option>
+                <option value="project">Project</option>
+                <option value="presentation">Presentation</option>
+              </select>
+            </fieldset>
+          
+            <h2 id="performance-management">8. Performance Management</h2>
+            
+            <fieldset>
+              <legend>Performance</legend>
+              <label for="performance-name">Performance Name:</label>
+              <input type="text" id="performance-name" name="performance-name" required>
+              
+              <label for="performance-indicators">Associated Indicators:</label>
+              <input type="text" id="performance-indicators" name="performance-indicators">
+              
+              <label for="performance-results">Results:</label>
+              <input type="text" id="performance-results" name="performance-results">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Level</legend>
+              <label for="level-name">Level Name:</label>
+              <select id="level-name" name="level-name">
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+              
+              <label for="level-performance">Associated Performance:</label>
+              <input type="text" id="level-performance" name="level-performance">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Descriptor</legend>
+              <label for="descriptor-name">Descriptor Name:</label>
+              <input type="text" id="descriptor-name" name="descriptor-name" required>
+              
+              <label for="descriptor-performance">Associated Performance:</label>
+              <input type="text" id="descriptor-performance" name="descriptor-performance">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Indicator</legend>
+              <label for="indicator-name">Indicator Name:</label>
+              <input type="text" id="indicator-name" name="indicator-name" required>
+              
+              <label for="indicator-descriptors">Linked Descriptors:</label>
+              <input type="text" id="indicator-descriptors" name="indicator-descriptors">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Results</legend>
+              <label for="results-name">Result Name:</label>
+              <input type="text" id="results-name" name="results-name" required>
+              
+              <label for="results-indicators">Linked Indicators:</label>
+              <input type="text" id="results-indicators" name="results-indicators">
+              
+              <label for="results-assessment">Assessment:</label>
+              <input type="text" id="results-assessment" name="results-assessment">
+            </fieldset>
+          
+            <h2 id="progress-achievement">9. Progress & Achievement</h2>
+            
+            <fieldset>
+              <legend>Progression</legend>
+              <label for="progression-proficiency">Proficiency:</label>
+              <progress id="progression-proficiency" name="progression-proficiency" value="50" max="100"></progress>
+              
+              <label for="progression-description">Description:</label>
+              <textarea id="progression-description" name="progression-description"></textarea>
+            </fieldset>
+          
+            <fieldset>
+              <legend>Proficiency</legend>
+              <label for="proficiency-level">Proficiency Level:</label>
+              <select id="proficiency-level" name="proficiency-level">
+                <option value="novice">Novice</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="expert">Expert</option>
+              </select>
+              
+              <label for="proficiency-competencies">Associated Competencies:</label>
+              <input type="text" id="proficiency-competencies" name="proficiency-competencies">
+              
+              <label for="proficiency-skills">Skills:</label>
+              <input type="text" id="proficiency-skills" name="proficiency-skills">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Achievements</legend>
+              <label for="achievement-name">Achievement Name:</label>
+              <input type="text" id="achievement-name" name="achievement-name" required>
+              
+              <label for="achievement-qualifications">Linked Qualifications:</label>
+              <input type="text" id="achievement-qualifications" name="achievement-qualifications">
+              
+              <label for="achievement-document">Document Upload:</label>
+              <input type="file" id="achievement-document" name="achievement-document">
+            </fieldset>
+          
+            <h2 id="taxonomies">10. Taxonomies</h2>
+  
+            <fieldset>
+              <legend>Miller's Taxonomy</legend>
+              <label for="miller-level">Level:</label>
+              <select id="miller-level" name="miller-level">
+                <option value="knows">Knows</option>
+                <option value="knows-how">Knows How</option>
+                <option value="shows">Shows</option>
+                <option value="does">Does</option>
+              </select>
+              
+              <label for="miller-competencies">Associated Competencies:</label>
+              <input type="text" id="miller-competencies" name="miller-competencies">
+              
+              <label for="miller-activities">Linked Activities:</label>
+              <input type="text" id="miller-activities" name="miller-activities">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Bloom's Taxonomy</legend>
+              <label for="bloom-level">Level:</label>
+              <select id="bloom-level" name="bloom-level">
+                <option value="remember">Remember</option>
+                <option value="understand">Understand</option>
+                <option value="apply">Apply</option>
+                <option value="analyze">Analyze</option>
+                <option value="evaluate">Evaluate</option>
+                <option value="create">Create</option>
+              </select>
+              
+              <label for="bloom-outcomes">Associated Learning Outcomes:</label>
+              <input type="text" id="bloom-outcomes" name="bloom-outcomes">
+              
+              <label for="bloom-assessments">Linked Assessments:</label>
+              <input type="text" id="bloom-assessments" name="bloom-assessments">
+            </fieldset>
+          
+            <h2 id="course-planning">11. Course Planning</h2>
+            
+            <fieldset>
+              <legend>Learning Path</legend>
+              <label for="path-name">Path Name:</label>
+              <input type="text" id="path-name" name="path-name" required>
+              
+              <label for="path-courses">Linked Courses:</label>
+              <input type="text" id="path-courses" name="path-courses">
+              
+              <label for="path-duration">Duration (in weeks):</label>
+              <input type="number" id="path-duration" name="path-duration" min="1">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Courses</legend>
+              <label for="course-name">Course Name:</label>
+              <input type="text" id="course-name" name="course-name" required>
+              
+              <label for="course-modules">Associated Modules:</label>
+              <input type="text" id="course-modules" name="course-modules">
+              
+              <label for="course-outcomes">Linked Learning Outcomes:</label>
+              <input type="text" id="course-outcomes" name="course-outcomes">
+            </fieldset>
+          
+            <h2 id="module-management">12. Module Management</h2>
+            
+            <fieldset>
+              <legend>Modules</legend>
+              <label for="module-name">Module Name:</label>
+              <input type="text" id="module-name" name="module-name" required>
+              
+              <label for="module-units">Linked Units:</label>
+              <input type="text" id="module-units" name="module-units">
+              
+              <label for="module-competencies">Associated Competencies:</label>
+              <input type="text" id="module-competencies" name="module-competencies">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Units</legend>
+              <label for="unit-name">Unit Name:</label>
+              <input type="text" id="unit-name" name="unit-name" required>
+              
+              <label for="unit-lessons">Associated Lessons:</label>
+              <input type="text" id="unit-lessons" name="unit-lessons">
+              
+              <label for="unit-modules">Linked Modules:</label>
+              <input type="text" id="unit-modules" name="unit-modules">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Lessons</legend>
+              <label for="lesson-name">Lesson Name:</label>
+              <input type="text" id="lesson-name" name="lesson-name" required>
+              
+              <label for="lesson-activities">Linked Activities:</label>
+              <input type="text" id="lesson-activities" name="lesson-activities">
+              
+              <label for="lesson-units">Associated Units:</label>
+              <input type="text" id="lesson-units" name="lesson-units">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Assessments</legend>
+              <label for="assessment-name">Assessment Name:</label>
+              <input type="text" id="assessment-name" name="assessment-name" required>
+              
+              <label for="assessment-modules">Linked Modules:</label>
+              <input type="text" id="assessment-modules" name="assessment-modules">
+              
+              <label for="assessment-outcomes">Associated Outcomes:</label>
+              <input type="text" id="assessment-outcomes" name="assessment-outcomes">
+            </fieldset>
+          
+            <fieldset>
+              <legend>Deliverables</legend>
+              <label for="deliverable-name">Deliverable Name:</label>
+              <input type="text" id="deliverable-name" name="deliverable-name" required>
+              
+              <label for="deliverable-assessments">Linked Assessments:</label>
+              <input type="text" id="deliverable-assessments" name="deliverable-assessments">
+              
+              <label for="deliverable-date">Submission Date:</label>
+              <input type="date" id="deliverable-date" name="deliverable-date">
+            </fieldset>
+          
+            <div class="form-actions">
+              <input type="submit" value="Submit Curriculum">
+            </div>
+          </form>
+        </div>
+
+        <div id="combine" class="tab-content">
+          <div class="coming-soon">
+            <h2>Combine Tab</h2>
+            <p>This section will allow you to combine and relate different curriculum elements.</p>
+          </div>
+        </div>
+
+        <div id="align" class="tab-content">
+          <div class="coming-soon">
+            <h2>Align Tab</h2>
+            <p>This section will help you align curriculum elements with standards and frameworks.</p>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
